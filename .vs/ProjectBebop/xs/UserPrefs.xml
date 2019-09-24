@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{63B5430C-4E8F-4BF9-B902-2AA2B0AABD6B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.WebAPI/Properties/launchSettings.json">
+    <Files>
+      <File FileName="Bebop.IdentityServer4/Config.cs" Line="74" Column="61" />
+      <File FileName="Bebop.WebAPI/Properties/launchSettings.json" Line="6" Column="47" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProjectBebop" expanded="True">
+            <Node name="IdentityServer" expanded="True">
+              <Node name="Quickstart" expanded="True" />
+            </Node>
+            <Node name="WebAPI" expanded="True">
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.IdentityServer PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>ClientApi/ClientApi.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
