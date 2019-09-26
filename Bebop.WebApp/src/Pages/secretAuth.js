@@ -32,7 +32,7 @@ function SecretAuth (){
 
   const AccessProtectedRoute = async () => {
     const protectedData = await axios.get('http://localhost:5001/identity')
-    if(protectedData.status != 200) {
+    if(protectedData.status !== 200) {
     } else {
       setProtectedData(protectedData.data)
     }

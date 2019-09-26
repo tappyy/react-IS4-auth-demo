@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import SecretAuth from './Pages/secretAuth'
-import UserAuth from './Pages/userAuth'
+import SecretAuth from './pages/secretAuth'
+import UserAuth from './pages/userAuth'
 
 function App () {
   return (
