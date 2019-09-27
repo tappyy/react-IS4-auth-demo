@@ -1,20 +1,18 @@
-﻿<Properties StartupConfiguration="{63B5430C-4E8F-4BF9-B902-2AA2B0AABD6B}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.WebAPI/Properties/launchSettings.json">
+﻿<Properties StartupConfiguration="{E4D47E9C-3F76-40AA-B64F-81CE56134D65}|IdentityServer2">
+  <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IdentityServer2/Config.cs">
     <Files>
-      <File FileName="Bebop.IdentityServer4/Config.cs" Line="74" Column="61" />
-      <File FileName="Bebop.WebAPI/Properties/launchSettings.json" Line="6" Column="47" />
+      <File FileName="IdentityServer2/Startup.cs" Line="43" Column="44" />
+      <File FileName="IdentityServer2/Quickstart/TestUsers.cs" Line="23" Column="34" />
+      <File FileName="IdentityServer2/Quickstart/SecurityHeadersAttribute.cs" Line="1" Column="1" />
+      <File FileName="IdentityServer2/Config.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProjectBebop" expanded="True">
             <Node name="IdentityServer" expanded="True">
-              <Node name="Quickstart" expanded="True" />
-            </Node>
-            <Node name="WebAPI" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
+              <Node name="Config.cs" selected="True" />
             </Node>
           </Node>
         </State>
