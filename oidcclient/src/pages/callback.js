@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import userManager from './utils/userManager'
+import userManager from '../utils/userManager'
 import { useHistory } from 'react-router-dom'
 
 function Callback() {
