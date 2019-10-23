@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
-import { UserManager } from 'oidc-client';
+import userManager from './utils/userManager'
+import { useHistory } from 'react-router-dom'
 
 function Callback() {
+  const history = useHistory()
   useEffect(() => {
-    new UserManager().signinRedirectCallback().then((result) => {
-      console.log('authenticated via oidc!!!!!!!!')
-      console.log(result)
-      window.location = 'http://localhost:3000'
-    });
-  }, [])
+    userManager.signinRedirectCallback()
+      .then(() => {
+        history.push('/')
+      });
+  }, [history])
   return (
     <div>
-
+      Redirecting...
     </div>
   )
 }

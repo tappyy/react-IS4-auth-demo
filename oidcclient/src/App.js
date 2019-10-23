@@ -11,23 +11,23 @@ import AuthProvider from './utils/authProvider'
 function App() {
   const [results, setResults] = useState(null)
 
-  // const login = () => {
-  //   userManager.signinRedirect();
-  // }
+  const login = () => {
+    userManager.signinRedirect();
+  }
 
-  // const callAPI = () => {
-  //   userManager.getUser().then(user => {
-  //     setResults(user)
-  //   })
-  // }
+  const callAPI = () => {
+    userManager.getUser().then(user => {
+      setResults(user)
+    })
+  }
 
   const printJSON = (value) => {
     return JSON.stringify(value, null, 2);
   }
 
-  // const logout = () => {
-  //   userManager.signoutRedirect()
-  // }
+  const logout = () => {
+    userManager.signoutRedirect()
+  }
 
   return (
     <Provider store={store}>
@@ -37,9 +37,9 @@ function App() {
           <div className="App">
             <header className="App-header">
               <p>test test test test</p>
-              {/* <button onClick={() => login()}>Login</button>
+              <button onClick={() => login()}>Login</button>
               <button onClick={() => callAPI()}>Call API</button>
-              <button onClick={() => logout()}>Logout</button> */}
+              <button onClick={() => logout()}>Logout</button>
 
               <pre>{printJSON(results)}</pre>
             </header>
