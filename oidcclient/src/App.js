@@ -1,58 +1,55 @@
 import React, { useState } from 'react';
 import './App.css';
-import { UserManager } from 'oidc-client';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Callback from './callback'
 import Protected from './protected'
+import { Provider } from 'react-redux';
+import store from './store';
+import userManager from './utils/userManager'
+import AuthProvider from './utils/authProvider'
 
 function App() {
   const [results, setResults] = useState(null)
 
-  const config = {
-    authority: "https://localhost:5001",
-    client_id: "spa",
-    redirect_uri: "http://localhost:3000/callback",
-    response_type: "id_token token",
-    scope: "openid profile",
-    post_logout_redirect_uri: "http://localhost:3000",
-  };
+  // const login = () => {
+  //   userManager.signinRedirect();
+  // }
 
-  const userManager = new UserManager(config);
-
-  const login = () => {
-    userManager.signinRedirect();
-  }
-
-  const callAPI = () => {
-    userManager.getUser().then(user => {
-      setResults(user)
-    })
-  }
+  // const callAPI = () => {
+  //   userManager.getUser().then(user => {
+  //     setResults(user)
+  //   })
+  // }
 
   const printJSON = (value) => {
     return JSON.stringify(value, null, 2);
   }
 
-  const logout = () => {
-    userManager.signoutRedirect()
-  }
+  // const logout = () => {
+  //   userManager.signoutRedirect()
+  // }
 
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
+    <Provider store={store}>
+      <AuthProvider userManager={userManager} store={store}>
 
-          <button onClick={() => login()}>Login</button>
-          <button onClick={() => callAPI()}>Call API</button>
-          <button onClick={() => logout()}>Logout</button>
+        <Router>
+          <div className="App">
+            <header className="App-header">
+              <p>test test test test</p>
+              {/* <button onClick={() => login()}>Login</button>
+              <button onClick={() => callAPI()}>Call API</button>
+              <button onClick={() => logout()}>Logout</button> */}
 
-          <pre>{printJSON(results)}</pre>
-        </header>
-      </div>
+              <pre>{printJSON(results)}</pre>
+            </header>
+          </div>
 
-      <Route path="/callback/" component={Callback} />
-      <Route path="/protected/" component={Protected} />
-    </Router>
+          <Route path="/callback/" component={Callback} />
+          <Route path="/protected/" component={Protected} />
+        </Router>
+      </AuthProvider>
+    </Provider>
   );
 }
 
