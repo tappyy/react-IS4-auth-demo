@@ -1,20 +1,9 @@
 import {
-  LOGIN,
-  LOGOUT,
-  STORE_USER
+  STORE_USER,
+  USER_SIGNED_OUT,
+  USER_EXPIRED,
+  STORE_USER_ERROR
 } from './types'
-
-export function login() {
-  return {
-    type: LOGIN
-  }
-}
-
-export function logout() {
-  return {
-    type: LOGOUT
-  }
-}
 
 export function storeUser(user) {
   return {
@@ -23,5 +12,21 @@ export function storeUser(user) {
   }
 }
 
+export function storeUserError() {
+  return {
+    type: STORE_USER_ERROR
+  }
+}
 
+export function userExpired() {
+  return {
+    type: USER_EXPIRED
+  }
+}
+
+export function userSignedOut() {
+  return {
+    type: USER_SIGNED_OUT
+  }
+}
 

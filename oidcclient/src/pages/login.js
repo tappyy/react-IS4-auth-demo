@@ -1,20 +1,28 @@
 import React from 'react'
 import userManager from '../utils/userManager'
+import { Redirect } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function Login() {
+  const user = useSelector(state => state.auth.user)
 
   const login = () => {
     userManager.signinRedirect();
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Login</h1>
-        <p>Welcome to OIDC React</p>
-        <button onClick={() => login()}>Login</button>
-      </header>
-    </div>
+    (user && !user.expired) ?
+      (<Redirect to={'/'} />)
+      :
+      (
+        <div className="App">
+          <header className="App-header">
+            <h1>Hello!</h1>
+            <p>Welcome to Andy's OIDC React Playground</p>
+            <button onClick={() => login()}>Login</button>
+          </header>
+        </div>
+      )
   )
 }
 

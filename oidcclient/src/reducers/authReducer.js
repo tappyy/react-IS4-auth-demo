@@ -1,6 +1,7 @@
 import {
-  LOGIN,
-  LOGOUT,
+  USER_SIGNED_OUT,
+  STORE_USER_ERROR,
+  USER_EXPIRED,
   STORE_USER
 } from '../actions/types'
 
@@ -16,6 +17,13 @@ export default function (state = initialState, action) {
         ...state,
         isLoadingUser: false,
         user: action.payload
+      }
+    case USER_EXPIRED:
+    case STORE_USER_ERROR:
+    case USER_SIGNED_OUT:
+      return {
+        ...state,
+        user: null
       }
     default:
       return state
