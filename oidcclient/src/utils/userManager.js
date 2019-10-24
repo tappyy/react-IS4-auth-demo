@@ -1,5 +1,5 @@
 import { UserManager } from 'oidc-client';
-import { storeUser, storeUserError } from '../actions/authActions'
+import { storeUser, storeUserError, loadingUser } from '../actions/authActions'
 
 const config = {
   authority: "https://localhost:5001",
@@ -13,6 +13,7 @@ const config = {
 const userManager = new UserManager(config)
 
 export function loadUserFromStorage(store) {
+  store.dispatch(loadingUser())
   userManager.getUser()
     .then(user => {
       store.dispatch(storeUser(user))

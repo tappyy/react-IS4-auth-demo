@@ -2,7 +2,8 @@ import {
   USER_SIGNED_OUT,
   STORE_USER_ERROR,
   USER_EXPIRED,
-  STORE_USER
+  STORE_USER,
+  LOADING_USER
 } from '../actions/types'
 
 const initialState = {
@@ -18,12 +19,18 @@ export default function (state = initialState, action) {
         isLoadingUser: false,
         user: action.payload
       }
+    case LOADING_USER:
+      return {
+        ...state,
+        isLoadingUser: true
+      }
     case USER_EXPIRED:
     case STORE_USER_ERROR:
     case USER_SIGNED_OUT:
       return {
         ...state,
-        user: null
+        user: null,
+        isLoadingUser: false
       }
     default:
       return state
