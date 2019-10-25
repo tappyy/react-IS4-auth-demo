@@ -4,10 +4,10 @@ import { storeUser, storeUserError, loadingUser } from '../actions/authActions'
 const config = {
   authority: "https://localhost:5001",
   client_id: "spa",
-  redirect_uri: "http://localhost:3000/callback",
+  redirect_uri: "http://localhost:3000/signincallback",
   response_type: "id_token token",
   scope: "openid profile",
-  post_logout_redirect_uri: "http://localhost:3000",
+  post_logout_redirect_uri: "http://localhost:3000/signoutcallback",
 };
 
 const userManager = new UserManager(config)

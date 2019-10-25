@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Callback from './pages/callback'
+import SigninCallback from './pages/signinCallback'
+import SignoutCallback from './pages/signoutCallback'
 import Home from './pages/home'
 import Login from './pages/login'
 import { Provider } from 'react-redux';
@@ -21,7 +22,8 @@ function App() {
         <Router>
           <PrivateRoute exact path="/" component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/callback" component={Callback} />
+          <Route path="/signincallback" component={SigninCallback} />
+          <Route path="/signoutcallback" component={SignoutCallback} />
         </Router>
       </AuthProvider>
     </Provider>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import userManager from '../utils/userManager'
 import { useHistory } from 'react-router-dom'
 
-function Callback() {
+function SigninCallback() {
   const history = useHistory()
   useEffect(() => {
     userManager.signinRedirectCallback()
@@ -17,4 +17,4 @@ function Callback() {
   )
 }
 
-export default Callback
+export default SigninCallback

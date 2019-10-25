@@ -44,11 +44,11 @@ namespace IdentityServer2
                     RedirectUris =
                     {
                         
-                        "http://localhost:3000/callback",
+                        "http://localhost:3000/signincallback",
                         
                     },
 
-                    PostLogoutRedirectUris = { "http://localhost:3000/" },
+                    PostLogoutRedirectUris = { "http://localhost:3000/signoutcallback" },
                     AllowedCorsOrigins = { "http://localhost:3000" },
 
                     AllowedScopes = { "openid", "profile" },
