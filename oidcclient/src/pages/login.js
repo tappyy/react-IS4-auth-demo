@@ -1,5 +1,5 @@
 import React from 'react'
-import userManager from '../utils/userManager'
+import { signinRedirect } from '../utils/userManager'
 import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -7,7 +7,7 @@ function Login() {
   const user = useSelector(state => state.auth.user)
 
   const login = () => {
-    userManager.signinRedirect();
+    signinRedirect()
   }
 
   return (

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
-import userManager from '../utils/userManager'
+import { signoutRedirectCallback } from '../utils/userManager'
 import { useHistory } from 'react-router-dom'
 
 function SignoutCallback() {
   const history = useHistory()
   useEffect(() => {
-    userManager.signoutRedirectCallback()
+    signoutRedirectCallback()
       .then(() => {
-        history.push('/')
+        history.push('/login')
       });
   }, [history])
   return (

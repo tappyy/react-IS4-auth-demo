@@ -12,16 +12,39 @@ const config = {
 
 const userManager = new UserManager(config)
 
-export function loadUserFromStorage(store) {
-  store.dispatch(loadingUser())
-  userManager.getUser()
-    .then(user => {
-      store.dispatch(storeUser(user))
-    })
-    .catch(error => {
-      console.error(`Error getting user: ${error}`)
-      store.dispatch(storeUserError())
-    })
+export async function loadUserFromStorage(store) {
+  try {
+    store.dispatch(loadingUser())
+    let user = await userManager.getUser()
+
+    if (!user) { return }
+
+    store.dispatch(storeUser(user))
+
+  } catch (e) {
+    console.error(`User not found: ${e}`)
+    store.dispatch(storeUserError())
+  }
+}
+
+export function signinRedirect() {
+  return userManager.signinRedirect()
+}
+
+export function signinRedirectCallback() {
+  return userManager.signinRedirectCallback()
+}
+
+export function signoutRedirect() {
+  userManager.clearStaleState()
+  //userManager.removeUser()
+  return userManager.signoutRedirect()
+}
+
+export function signoutRedirectCallback() {
+  userManager.clearStaleState()
+  //userManager.removeUser()
+  return userManager.signoutRedirectCallback()
 }
 
 export default userManager
