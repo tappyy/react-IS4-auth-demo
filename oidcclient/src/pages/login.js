@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 function Login() {
   const user = useSelector(state => state.auth.user)
 
-  const login = () => {
+  function login() {
     signinRedirect()
   }
 
@@ -15,10 +15,10 @@ function Login() {
       (<Redirect to={'/'} />)
       :
       (
-        <div className="App">
-          <header className="App-header">
+        <div>
+          <header>
             <h1>Hello!</h1>
-            <p>Welcome to Andy's OIDC React Playground</p>
+            <p>I don't know who you are.</p>
             <button onClick={() => login()}>Login</button>
           </header>
         </div>
