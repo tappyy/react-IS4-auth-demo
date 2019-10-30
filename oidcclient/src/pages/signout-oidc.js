@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { signoutRedirectCallback } from '../utils/userManager'
 import { useHistory } from 'react-router-dom'
 
-function SignoutCallback() {
+function SignoutOidc() {
   const history = useHistory()
   useEffect(() => {
     signoutRedirectCallback()
@@ -17,4 +17,4 @@ function SignoutCallback() {
   )
 }
 
-export default SignoutCallback
+export default SignoutOidc

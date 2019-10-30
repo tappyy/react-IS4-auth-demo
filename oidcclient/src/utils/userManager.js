@@ -1,26 +1,21 @@
 import { UserManager } from 'oidc-client';
-import { storeUser, storeUserError, loadingUser } from '../actions/authActions'
+import { storeUserError } from '../actions/authActions'
 
 const config = {
   authority: "https://localhost:5001",
   client_id: "spa",
-  redirect_uri: "http://localhost:3000/signincallback",
+  redirect_uri: "http://localhost:3000/signin-oidc",
   response_type: "id_token token",
   scope: "openid profile",
-  post_logout_redirect_uri: "http://localhost:3000/signoutcallback",
+  post_logout_redirect_uri: "http://localhost:3000/signout-oidc",
 };
 
 const userManager = new UserManager(config)
 
 export async function loadUserFromStorage(store) {
   try {
-    store.dispatch(loadingUser())
     let user = await userManager.getUser()
-
-    if (!user) { return }
-
-    store.dispatch(storeUser(user))
-
+    if (!user) { return store.dispatch(storeUserError()) }
   } catch (e) {
     console.error(`User not found: ${e}`)
     store.dispatch(storeUserError())
@@ -37,13 +32,13 @@ export function signinRedirectCallback() {
 
 export function signoutRedirect() {
   userManager.clearStaleState()
-  //userManager.removeUser()
+  userManager.removeUser()
   return userManager.signoutRedirect()
 }
 
 export function signoutRedirectCallback() {
   userManager.clearStaleState()
-  //userManager.removeUser()
+  userManager.removeUser()
   return userManager.signoutRedirectCallback()
 }
 

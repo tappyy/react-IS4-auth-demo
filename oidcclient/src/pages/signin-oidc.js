@@ -2,14 +2,16 @@ import React, { useEffect } from 'react'
 import { signinRedirectCallback } from '../utils/userManager'
 import { useHistory } from 'react-router-dom'
 
-function SigninCallback() {
+function SigninOidc() {
   const history = useHistory()
   useEffect(() => {
-    signinRedirectCallback()
-      .then(() => {
-        history.push('/')
-      });
+    async function signinAsync() {
+      await signinRedirectCallback()
+      history.push('/')
+    }
+    signinAsync()
   }, [history])
+
   return (
     <div>
       Redirecting...
@@ -17,4 +19,4 @@ function SigninCallback() {
   )
 }
 
-export default SigninCallback
+export default SigninOidc

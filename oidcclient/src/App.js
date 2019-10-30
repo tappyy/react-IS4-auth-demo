@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import SigninCallback from './pages/signinCallback'
-import SignoutCallback from './pages/signoutCallback'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import SigninOidc from './pages/signin-oidc'
+import SignoutOidc from './pages/signout-oidc'
 import Home from './pages/home'
 import Login from './pages/login'
 import { Provider } from 'react-redux';
@@ -13,17 +13,21 @@ import PrivateRoute from './utils/protectedRoute'
 
 function App() {
 
-  // fetch current user from cookies
-  loadUserFromStorage(store)
+  useEffect(() => {
+    // fetch current user from cookies
+    loadUserFromStorage(store)
+  }, [])
 
   return (
     <Provider store={store}>
       <AuthProvider userManager={userManager} store={store}>
         <Router>
-          <PrivateRoute exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/signincallback" component={SigninCallback} />
-          <Route path="/signoutcallback" component={SignoutCallback} />
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signin-oidc" component={SigninOidc} />
+            <Route exact path="/signout-oidc" component={SignoutOidc} />
+            <PrivateRoute exact path="/" component={Home} />
+          </Switch>
         </Router>
       </AuthProvider>
     </Provider>

@@ -11,7 +11,7 @@ function Login() {
   }
 
   return (
-    (user && !user.expired) ?
+    (user) ?
       (<Redirect to={'/'} />)
       :
       (

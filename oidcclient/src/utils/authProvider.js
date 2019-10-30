@@ -47,9 +47,6 @@ export default function AuthProvider({ userManager: manager, store, children }) 
     };
   }, [manager, store]);
 
-  // callbacks for events
-
-
   return (
     React.Children.only(children)
   )
