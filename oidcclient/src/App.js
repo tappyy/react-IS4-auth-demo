@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SigninOidc from './pages/signin-oidc'
 import SignoutOidc from './pages/signout-oidc'
 import Home from './pages/home'
@@ -10,6 +10,7 @@ import store from './store';
 import userManager, { loadUserFromStorage } from './utils/userManager'
 import AuthProvider from './utils/authProvider'
 import PrivateRoute from './utils/protectedRoute'
+import NoMatch from './pages/404'
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
             <Route path="/signout-oidc" component={SignoutOidc} />
             <Route path="/signin-oidc" component={SigninOidc} />
             <PrivateRoute exact path="/" component={Home} />
-            <Route render={() => <Redirect to={'/'} />} />
+            <Route component={NoMatch} />} />
           </Switch>
         </Router>
       </AuthProvider>
