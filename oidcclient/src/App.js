@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import SigninOidc from './pages/signin-oidc'
 import SignoutOidc from './pages/signout-oidc'
 import Home from './pages/home'
@@ -23,10 +23,11 @@ function App() {
       <AuthProvider userManager={userManager} store={store}>
         <Router>
           <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signin-oidc" component={SigninOidc} />
-            <Route exact path="/signout-oidc" component={SignoutOidc} />
+            <Route path="/login" component={Login} />
+            <Route path="/signout-oidc" component={SignoutOidc} />
+            <Route path="/signin-oidc" component={SigninOidc} />
             <PrivateRoute exact path="/" component={Home} />
+            <Route render={() => <Redirect to={'/'} />} />
           </Switch>
         </Router>
       </AuthProvider>
