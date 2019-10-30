@@ -5,11 +5,13 @@ import { useHistory } from 'react-router-dom'
 function SignoutOidc() {
   const history = useHistory()
   useEffect(() => {
-    signoutRedirectCallback()
-      .then(() => {
-        history.push('/login')
-      });
+    async function signoutAsync() {
+      await signoutRedirectCallback()
+      history.push('/')
+    }
+    signoutAsync()
   }, [history])
+
   return (
     <div>
       Redirecting...
