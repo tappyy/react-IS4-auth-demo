@@ -10,12 +10,10 @@ function NoMatch() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Oops!</h1>
-        <p>We didn't find {location.pathname}</p>
-        <button onClick={() => returnHome()}>Return</button>
-      </header>
+    <div>
+      <h1>Oops!</h1>
+      <p>I don't know what "{location.pathname}" is...</p>
+      <button onClick={() => returnHome()}>Hurry back</button>
     </div>
   )
 }

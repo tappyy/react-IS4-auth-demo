@@ -16,11 +16,9 @@ function Login() {
       :
       (
         <div>
-          <header>
-            <h1>Hello!</h1>
-            <p>I don't know who you are.</p>
-            <button onClick={() => login()}>Login</button>
-          </header>
+          <h1>Hello!</h1>
+          <p>I don't know who you are.</p>
+          <button onClick={() => login()}>Login</button>
         </div>
       )
   )
