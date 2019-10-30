@@ -1,41 +1,38 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import SecretAuth from './Pages/secretAuth'
-import UserAuth from './Pages/userAuth'
-import OidcAuth from './Pages/oidcAuth'
-import AuthService from './services/authService'
-
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import SigninOidc from './pages/signin-oidc'
+import SignoutOidc from './pages/signout-oidc'
+import Home from './pages/home'
+import Login from './pages/login'
+import { Provider } from 'react-redux';
+import store from './store';
+import userManager, { loadUserFromStorage } from './services/userService'
+import AuthProvider from './utils/authProvider'
+import PrivateRoute from './utils/protectedRoute'
+import NoMatch from './pages/404'
 
 function App() {
 
-  const triggerOidc = () => {
-    const authService = new AuthService()
-    authService.signinRedirect()
-  }
+  useEffect(() => {
+    // fetch current user from cookies
+    loadUserFromStorage(store)
+  }, [])
 
   return (
-    <Router>
-      <div>
-        <h1>AnDy's AuTh3nTiCaTi0n PlAyGr0uNd</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/sharedsecret/">Shared Secret Auth</Link> - Authenticate web app based on shared secret
-            </li>
-            <li>
-              <Link to="/usercredentials/">User Credentials Auth</Link> - Authenticate web app based on entered user credentials
-            </li>
-          </ul>
-          <button onClick={() => triggerOidc()}>OIDC Authentication</button>
-        </nav>
-      </div>
-
-      <Route exact={true} path="/signin-oidc/" component={OidcAuth} />
-      <Route path="/sharedsecret/" component={SecretAuth} />
-      <Route path="/usercredentials/" component={UserAuth} />
-    </Router>
-  )
-
+    <Provider store={store}>
+      <AuthProvider userManager={userManager} store={store}>
+        <Router>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/signout-oidc" component={SignoutOidc} />
+            <Route path="/signin-oidc" component={SigninOidc} />
+            <PrivateRoute exact path="/" component={Home} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
+      </AuthProvider>
+    </Provider>
+  );
 }
 
 export default App;

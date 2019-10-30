@@ -1,28 +1,21 @@
-﻿<Properties StartupConfiguration="{E4D47E9C-3F76-40AA-B64F-81CE56134D65}|IdentityServer2">
+﻿<Properties StartupConfiguration="{EFD668C9-3BAD-49B0-ABB3-45CE105F4BFE}|Default">
   <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IdentityServer2/Config.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.Identity/Config.cs">
     <Files>
-      <File FileName="IdentityServer2/Startup.cs" Line="43" Column="44" />
-      <File FileName="IdentityServer2/Quickstart/TestUsers.cs" Line="22" Column="76" />
-      <File FileName="IdentityServer2/Config.cs" Line="40" Column="47" />
+      <File FileName="Bebop.Identity/Config.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ProjectBebop" expanded="True">
-            <Node name="IdentityServer" expanded="True">
-              <Node name="Quickstart" expanded="True" />
-              <Node name="Config.cs" selected="True" />
-            </Node>
-          </Node>
+          <Node name="ProjectBebop" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.IdentityServer PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>ClientApi/ClientApi.csproj</String>
+    <String>IdentityServer2/IdentityServer.csproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
