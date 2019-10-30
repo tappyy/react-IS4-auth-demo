@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SigninOidc from './pages/signin-oidc'
 import SignoutOidc from './pages/signout-oidc'
@@ -7,7 +6,7 @@ import Home from './pages/home'
 import Login from './pages/login'
 import { Provider } from 'react-redux';
 import store from './store';
-import userManager, { loadUserFromStorage } from './utils/userManager'
+import userManager, { loadUserFromStorage } from './services/userService'
 import AuthProvider from './utils/authProvider'
 import PrivateRoute from './utils/protectedRoute'
 import NoMatch from './pages/404'
@@ -28,7 +27,7 @@ function App() {
             <Route path="/signout-oidc" component={SignoutOidc} />
             <Route path="/signin-oidc" component={SigninOidc} />
             <PrivateRoute exact path="/" component={Home} />
-            <Route component={NoMatch} />} />
+            <Route component={NoMatch} />
           </Switch>
         </Router>
       </AuthProvider>

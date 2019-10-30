@@ -1,10 +1,13 @@
 import React from 'react'
-import { signoutRedirect } from '../utils/userManager'
+import { signoutRedirect } from '../services/userService'
 
 function Home() {
   const signout = () => {
     signoutRedirect();
   }
+
+
+
   return (
     <div className="App">
       <header className="App-header">

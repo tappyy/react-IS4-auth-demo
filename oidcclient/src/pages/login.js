@@ -1,5 +1,5 @@
 import React from 'react'
-import { signinRedirect } from '../utils/userManager'
+import { signinRedirect } from '../services/userService'
 import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
