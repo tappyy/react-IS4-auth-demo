@@ -22,7 +22,7 @@ namespace IdentityServer2
         {
             return new ApiResource[]
             {
-                new ApiResource("api1", "My API #1")
+                new ApiResource("webapi", "Bebop Web API")
             };
         }
 
@@ -38,7 +38,7 @@ namespace IdentityServer2
                     ClientUri = "http://identityserver.io",
 
                     AllowedGrantTypes = GrantTypes.Implicit,
-                    //RequirePkce = true,
+                    
                     RequireClientSecret = false,
 
                     RedirectUris =
@@ -51,7 +51,7 @@ namespace IdentityServer2
                     PostLogoutRedirectUris = { "http://localhost:3000/signout-oidc" },
                     AllowedCorsOrigins = { "http://localhost:3000" },
 
-                    AllowedScopes = { "openid", "profile" },
+                    AllowedScopes = { "openid", "profile", "webapi" },
                     AllowAccessTokensViaBrowser = true
                 }
             };

@@ -24,11 +24,11 @@ namespace ClientApi
                 .AddJwtBearer("Bearer", options =>
                 {
                     // identity server issuing token
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "https://localhost:5001";
                     options.RequireHttpsMetadata = false;
 
                     // the scope id of this api
-                    options.Audience = "bebopclientapi";
+                    options.Audience = "webapi";
                 });
         }
 

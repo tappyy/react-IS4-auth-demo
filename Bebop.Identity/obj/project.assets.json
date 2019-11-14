@@ -12184,11 +12184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/andrewpottage/Projects/react-IS4-auth-demo/IdentityServer2/IdentityServer.csproj",
+      "projectUniqueName": "/Users/andrewpottage/Projects/react-IS4-auth-demo/Bebop.Identity/IdentityServer.csproj",
       "projectName": "IdentityServer",
-      "projectPath": "/Users/andrewpottage/Projects/react-IS4-auth-demo/IdentityServer2/IdentityServer.csproj",
+      "projectPath": "/Users/andrewpottage/Projects/react-IS4-auth-demo/Bebop.Identity/IdentityServer.csproj",
       "packagesPath": "/Users/andrewpottage/.nuget/packages/",
-      "outputPath": "/Users/andrewpottage/Projects/react-IS4-auth-demo/IdentityServer2/obj/",
+      "outputPath": "/Users/andrewpottage/Projects/react-IS4-auth-demo/Bebop.Identity/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
