@@ -1,23 +1,26 @@
 ﻿<Properties StartupConfiguration="Multiple Projects">
   <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.Identity/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.Identity/Startup.cs">
     <Files>
-      <File FileName="Bebop.Identity/Config.cs" Line="41" Column="21" />
-      <File FileName="Bebop.WebAPI/Startup.cs" Line="26" Column="37" />
-      <File FileName="Bebop.WebAPI/Controllers/IdentityController.cs" Line="1" Column="1" />
-      <File FileName="Bebop.Identity/Properties/launchSettings.json" Line="26" Column="5" />
+      <File FileName="Bebop.WebAPI/Controllers/DoughnutController.cs" Line="9" Column="25" />
+      <File FileName="Bebop.WebAPI/Models/Doughnut.cs" Line="9" Column="40" />
+      <File FileName="Bebop.Identity/Config.cs" Line="8" Column="26" />
+      <File FileName="Bebop.Identity/Program.cs" Line="17" Column="10" />
+      <File FileName="Bebop.Identity/Startup.cs" Line="39" Column="62" />
+      <File FileName="Bebop.Identity/Quickstart/TestUsers.cs" Line="26" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProjectBebop" expanded="True">
             <Node name="IdentityServer" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Quickstart" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="WebAPI" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
           </Node>

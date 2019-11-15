@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { storeUser } from '../actions/authActions'
-
+import { setAuthHeader } from './axiosHeaders';
 
 export default function AuthProvider({ userManager: manager, store, children }) {
 
@@ -11,10 +11,12 @@ export default function AuthProvider({ userManager: manager, store, children }) 
 
     const onUserLoaded = (user) => {
       console.log(`user loaded: ${user}`)
+      setAuthHeader(user.access_token)
       store.dispatch(storeUser(user))
     }
 
     const onUserUnloaded = () => {
+      setAuthHeader(null)
       console.log(`user unloaded`)
     }
 

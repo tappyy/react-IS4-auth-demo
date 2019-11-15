@@ -17,7 +17,11 @@ function Login() {
       (
         <div>
           <h1>Hello!</h1>
-          <p>I don't know who you are.</p>
+          <p>Welcome to We Want Doughnuts.</p>
+          <p>A demo of using React and Identity Server 4 to authenticate a user via OpenID Connect to gain access to a web API (and some lovely doughnuts).</p>
+          <p>Start by signing in.</p>
+          <p>💡 <strong>Tip: </strong><em>User: 'spiderman', Pass: 'spiderman'</em></p>
+
           <button onClick={() => login()}>Login</button>
         </div>
       )

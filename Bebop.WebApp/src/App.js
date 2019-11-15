@@ -9,7 +9,6 @@ import store from './store';
 import userManager, { loadUserFromStorage } from './services/userService'
 import AuthProvider from './utils/authProvider'
 import PrivateRoute from './utils/protectedRoute'
-import NoMatch from './pages/404'
 
 function App() {
 
@@ -27,7 +26,6 @@ function App() {
             <Route path="/signout-oidc" component={SignoutOidc} />
             <Route path="/signin-oidc" component={SigninOidc} />
             <PrivateRoute exact path="/" component={Home} />
-            <Route component={NoMatch} />
           </Switch>
         </Router>
       </AuthProvider>
