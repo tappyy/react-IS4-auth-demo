@@ -32,6 +32,7 @@ function Home() {
           {prettifyJson(doughnutData ? doughnutData : 'No doughnuts yet :(')}
         </code>
       </pre>
+      <a target='_blank' href='https://github.com/tappyy/react-IS4-auth-demo'>More info on Github</a>
     </div>
   )
 }
