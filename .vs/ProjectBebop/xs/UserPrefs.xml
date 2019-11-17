@@ -1,19 +1,15 @@
 ﻿<Properties StartupConfiguration="Multiple Projects">
   <MonoDevelop.Ide.ItemProperties.WebAPI PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.WebAPI/Controllers/DoughnutController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bebop.WebAPI/Startup.cs">
     <Files>
-      <File FileName="Bebop.WebAPI/Controllers/DoughnutController.cs" Line="1" Column="1" />
+      <File FileName="Bebop.WebAPI/Startup.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProjectBebop" expanded="True">
             <Node name="WebAPI" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="DoughnutController.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

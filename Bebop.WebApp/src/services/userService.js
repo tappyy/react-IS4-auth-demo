@@ -6,7 +6,7 @@ const config = {
   client_id: "wewantdoughnuts",
   redirect_uri: "http://localhost:3000/signin-oidc",
   response_type: "id_token token",
-  scope: "openid profile webapi",
+  scope: "openid profile doughnutapi",
   post_logout_redirect_uri: "http://localhost:3000/signout-oidc",
 };
 
