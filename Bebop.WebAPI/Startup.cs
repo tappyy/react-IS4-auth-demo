@@ -28,7 +28,7 @@ namespace ClientApi
                     options.RequireHttpsMetadata = false;
 
                     // the scope id of this api
-                    options.Audience = "webapi";
+                    options.Audience = "doughnutapi";
                 });
         }
 
@@ -52,7 +52,7 @@ namespace ClientApi
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Doughnut API is running!");
             });
         }
     }

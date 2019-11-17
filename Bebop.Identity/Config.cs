@@ -14,7 +14,7 @@ namespace IdentityServer2
             return new IdentityResource[]
             {
                 new IdentityResources.OpenId(),
-                new IdentityResources.Profile(),
+                new IdentityResources.Profile()                
             };
         }
 
@@ -22,7 +22,7 @@ namespace IdentityServer2
         {
             return new ApiResource[]
             {
-                new ApiResource("webapi", "Bebop Web API")
+                new ApiResource("doughnutapi", "Doughnut API")
             };
         }
 
@@ -49,7 +49,7 @@ namespace IdentityServer2
                     PostLogoutRedirectUris = { "http://localhost:3000/signout-oidc" },
                     AllowedCorsOrigins = { "http://localhost:3000" },
 
-                    AllowedScopes = { "openid", "profile", "webapi" },
+                    AllowedScopes = { "openid", "profile", "doughnutapi" },
                     AllowAccessTokensViaBrowser = true
                 }
             };
