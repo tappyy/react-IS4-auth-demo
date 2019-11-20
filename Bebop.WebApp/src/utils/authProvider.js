@@ -11,7 +11,6 @@ export default function AuthProvider({ userManager: manager, store, children }) 
 
     const onUserLoaded = (user) => {
       console.log(`user loaded: ${user}`)
-      setAuthHeader(user.access_token)
       store.dispatch(storeUser(user))
     }
 
