@@ -23,7 +23,7 @@ function Login() {
           <p>💡 <strong>Tip: </strong><em>User: 'spiderman', Pass: 'spiderman'</em></p>
 
           <button onClick={() => login()}>Login</button>
-          <p><a target='_blank' rel='noopener noreferrer' href='https://github.com/tappyy/react-IS4-auth-demo'>More info on Github</a></p>
+          <p><a target='_blank' rel='noopener noreferrer' href='https://github.com/tappyy/react-IS4-auth-demo'>Github Repo</a></p>
         </div>
       )
   )
