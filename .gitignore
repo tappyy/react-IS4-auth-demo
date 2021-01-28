@@ -46,3 +46,4 @@ lcov.info
 # Visual Studio 2015
 .vs/
 /.devcontainer/localhost.pfx
+/Bebop.Identity/identityserver4_log.txt

@@ -2,33 +2,38 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
 
-namespace IdentityServer2
+namespace IdentityServer
 {
     public static class Config
     {
-        public static IEnumerable<IdentityResource> GetIdentityResources()
-        {
-            return new IdentityResource[]
+        public static IEnumerable<IdentityResource> IdentityResources =>
+            new List<IdentityResource>
             {
                 new IdentityResources.OpenId(),
-                new IdentityResources.Profile()                
+                new IdentityResources.Profile(),
             };
-        }
 
-        public static IEnumerable<ApiResource> GetApis()
-        {
-            return new ApiResource[]
+        public static IEnumerable<ApiScope> ApiScopes =>
+            new List<ApiScope>
             {
-                new ApiResource("doughnutapi", "Doughnut API")
+                new ApiScope("doughnutapi", "Doughnut API")
             };
-        }
 
-        public static IEnumerable<Client> GetClients()
-        {
-            return new[]
+        public static IEnumerable<ApiResource> ApiResources =>
+            new List<ApiResource>
+            {
+                new ApiResource("doughnutapi")
+                {
+                    Scopes = { "doughnutapi" }
+                }
+            };
+
+        public static IEnumerable<Client> Clients =>
+            new List<Client>
             {
                 // React client
                 new Client
@@ -49,10 +54,15 @@ namespace IdentityServer2
                     PostLogoutRedirectUris = { "http://localhost:3000/signout-oidc" },
                     AllowedCorsOrigins = { "http://localhost:3000" },
 
-                    AllowedScopes = { "openid", "profile", "doughnutapi" },
+                    AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "doughnutapi"
+                    },
+
                     AllowAccessTokensViaBrowser = true
                 }
             };
-        }
     }
 }
